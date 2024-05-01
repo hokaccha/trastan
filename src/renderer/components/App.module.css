@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: rgb(214, 225, 243);
+}
+
+.left, .right {
+  flex: 1;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;;
+  box-sizing: border-box;
+}
+
+.left {
+  border-right: 5px solid rgb(214, 225, 243);
+}
+
+.right {
+  border-left: 5px solid rgb(214, 225, 243);
+}
+
+.copied {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: inline-block;
+  background-color: steelblue;
+  padding: 8px;
+  border-radius: 6px;
+  color: white;
+}
+
+.editor {
+  color: #333;
+  border-radius: 10px;
+  line-height: 1.4em;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  display: block;
+  resize: none;
+  font-size: 18px;
+  border: none;
+}
+
+.editor:focus {
+  outline: none;
+  /*
+  outline-color: skyblue;
+  outline-style: solid;
+  outline-width: 2px;
+  */
+}
+
+@keyframes spin {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+
+.loading {
+  background-color: rgb(214, 225, 243, 0.4);
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  padding-top: 40vh;
+  box-sizing: border-box;
+}
+
+.loading .spinner {
+  background-image: url("./icon.png");
+  background-position: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  animation: spin 4s linear infinite;
+}
+
+.result {
+  font-size: 18px;
+  padding: 10px 20px;
+  color: #333;
+}
+
+.result p {
+  margin: 10px 0;
+}
+
+.result code {
+  background-color: lightgray;
+  padding: 3px;
+  font-family: Monaco, monospace;
+  font-size: 15px;
+}
+
+.result pre {
+  background-color: #222;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.result pre code {
+  background-color: inherit;
+  padding: 0;
+}
+
+.result blockquote {
+  border-left: 5px solid lightslategrey;
+  padding-left: 10px;
+  margin-left: 10px;
+  color: #333;
+}

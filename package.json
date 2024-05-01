@@ -1,0 +1,44 @@
+{
+  "name": "trastan",
+  "version": "1.0.0",
+  "private": true,
+  "main": "out/main/index.js",
+  "productName": "Trastan",
+  "scripts": {
+    "clean": "rm -rf dist out",
+    "dev": "npm run build:electron && electron .",
+    "build": "run-s build:*",
+    "build:renderer": "next build src/renderer",
+    "build:electron": "tsc -p src/main",
+    "dist": "npm run build && electron-builder",
+    "lint": "run-p -l -c --aggregate-output lint:*",
+    "lint:tsc-main": "tsc --noEmit -p src/main",
+    "lint:tsc-renderer": "tsc --noEmit -p src/renderer",
+    "lint:eslint": "eslint . --max-warnings 0",
+    "lint:prettier": "prettier --check .",
+    "format": "run-s format:*",
+    "format:eslint": "eslint --fix .",
+    "format:prettier": "prettier --write ."
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "electron-next": "latest",
+    "marked": "^12.0.2",
+    "openai": "^4.39.1",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "electron": "latest",
+    "electron-builder": "latest",
+    "next": "latest",
+    "npm-run-all": "latest",
+    "typescript": "latest"
+  },
+  "volta": {
+    "node": "20.12.2"
+  }
+}
