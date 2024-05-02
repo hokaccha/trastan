@@ -70,27 +70,30 @@ export const App: FC = () => {
   }, [result]);
 
   return (
-    <div className={styles.container}>
-      {isCopied && <div className={styles.copied}>Copied!</div>}
-      <div className={styles.left}>
-        <textarea
-          className={styles.editor}
-          ref={editorRef}
-          onKeyDown={handleKeyDown}
-          onPaste={handlePaste}
-        />
-      </div>
-      <div className={styles.right}>
-        {isLoading ? (
-          <div className={styles.loading}>
-            <div className={styles.spinner} />
-          </div>
-        ) : (
-          <div
-            className={styles.result}
-            dangerouslySetInnerHTML={{ __html: html }}
+    <div>
+      <div className={styles.header}></div>
+      <div className={styles.container}>
+        {isCopied && <div className={styles.copied}>Copied!</div>}
+        <div className={styles.left}>
+          <textarea
+            className={styles.editor}
+            ref={editorRef}
+            onKeyDown={handleKeyDown}
+            onPaste={handlePaste}
           />
-        )}
+        </div>
+        <div className={styles.right}>
+          {isLoading ? (
+            <div className={styles.loading}>
+              <div className={styles.spinner} />
+            </div>
+          ) : (
+            <div
+              className={styles.result}
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

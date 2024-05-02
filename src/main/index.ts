@@ -10,7 +10,7 @@ app.on("ready", async () => {
   initMenu();
   initIpc();
 
-  const port = process.env.PORT ? parseInt(process.env.PORT) : 8000;
+  const port = process.env.PORT ? parseInt(process.env.PORT) : 8001;
 
   await prepareNext(
     {
@@ -23,7 +23,7 @@ app.on("ready", async () => {
   const mainWindow = new BrowserWindow({
     width: 1200,
     height: 900,
-    // titleBarStyle: "hiddenInset",
+    titleBarStyle: "hiddenInset",
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: false,
