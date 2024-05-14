@@ -22,7 +22,7 @@ export async function translate(text: string): Promise<string> {
       { role: "system", content: prompt },
       { role: "user", content: text },
     ],
-    model: "gpt-4-turbo",
+    model: "gpt-4o",
     stream: false,
   });
   return result.choices[0].message.content || "";
