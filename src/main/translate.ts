@@ -5,7 +5,6 @@ import * as fs from "node:fs/promises";
 
 const prompt = `
   あなたはプロの翻訳家です。入力された文章が英語であれば日本語に、日本語であれば英語に翻訳してください。
-  入力はmarkdown形式で、出力もmarkdown形式でお願いします。codeブロックは翻訳しないでください。
 `;
 
 export async function translate(text: string): Promise<string> {
